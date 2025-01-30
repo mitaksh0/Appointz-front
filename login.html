@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="icon" type="image/x-icon" href="./favicon.png">
+</head>
+<body>
+    
+    <div class="box">
+        <h2>Enter Login Details</h2>
+        <hr>
+        <form class="login">
+            <table>
+                <tbody>
+                    <tr>
+                        <td><label for="username">Username: </label></td>
+                        <td><input type="text" name="username" placeholder="Username"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="password">Password: </label></td>
+                        <td><input type="password" name="password" placeholder="Password"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="role">Role: </label></td>
+                        <td>
+                            <select name="role" id="">
+                                <option selected disabled>Select</option>
+                                <option value="receptionist">Receptionist</option>
+                                <option value="doctor">Doctor</option>
+                            </select>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button class="btn" type="submit">Log In</button>
+        </form>
+
+        <hr>
+        <h3>Not registered ?</h3>
+        <a class="btn" href="./register.html">Register</a>
+    </div>
+
+
+</body>
+
+<script src="./script.js"></script>
+</html>

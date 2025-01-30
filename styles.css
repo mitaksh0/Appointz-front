@@ -1,0 +1,176 @@
+body {
+    background-color: rgb(241, 237, 231);
+    box-sizing: border-box;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 1.1rem;
+}
+
+.box {
+    max-width: 80%;
+    margin: 90px auto;
+    text-align: center;
+    background-color:darksalmon;
+    border-radius: 10px;
+    padding: 30px 0;
+    color: white;
+}
+
+.btn {
+    margin: 20px;
+    padding: 12px 22px;
+    background-color: rgba(0,0,0,0);
+    color: white;
+    border: 1px solid white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: 0.2s;
+    border-radius: 7px;
+}
+
+.btn:hover {
+    background-color: white;
+    color: darksalmon;
+}
+
+.box-btn {
+    max-width: 40%;
+    margin: 30px auto;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.login input, 
+.login select, 
+.register input, 
+.register select,
+.admin input,
+.admin select {
+    margin: 10px;
+    padding: 5px 7px;
+    border-radius: 5px;
+    border: 1px solid white;
+}
+
+.login input:focus, 
+.login select:focus, 
+.register input:focus, 
+.register select:focus, 
+.admin input,
+.admin select{
+    border-color: goldenrod;
+    outline: none;
+}
+
+.login label, .register label {
+    font-weight: bold;
+}
+
+/* .login > button {
+    margin: 20px;
+} */
+
+hr {
+    margin: 20px auto;
+    width: 10%;
+    color: white;
+    background-color: white;
+    border: 1px solid white;
+}
+
+table {
+    margin: 0 auto;
+}
+
+.register table > tbody > tr > td:last-child, .login table > tbody > tr > td:last-child {
+    text-align: left;
+}
+
+.register table > tbody > tr > td:first-child, .login table > tbody > tr > td:first-child {
+    text-align: right;
+}
+
+
+/* admin page */
+.admin header {
+    text-align: right;
+}
+
+.admin > section {
+    text-align: center;
+}
+
+.admin > header > div {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.admin .btn {
+    color: darksalmon;
+    border-color: darksalmon;
+}
+
+.admin table {
+    width: 95%;
+    border-collapse: collapse;
+    text-align: left;
+}
+  
+.admin th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+  
+.admin th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.btn-form {
+    padding: 4px 8px;
+    color: white;
+    background-color: darksalmon;
+    border: 1px solid darksalmon;
+    border-radius: 5px;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.btn-form:hover {
+    opacity: 0.8;
+}
+
+/* popup styles */
+#popupDiv {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border: 2px solid #ccc;
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    z-index: 100;
+    border-radius: 12px;
+}
+
+#popupDiv h2 {
+    margin-top: 0;
+}
+
+#closeButton {
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+#popupDiv > div {
+    text-align: right;
+}

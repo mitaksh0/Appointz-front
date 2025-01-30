@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="admin">
+
+    <!-- user info and logout button -->
+    <header> 
+        <div>
+            <h4>Welcome, {username (role)}</h4>
+            <button class="logout btn">Logout</button>
+        </div>
+    </header>
+
+    <!-- popup -->
+    <div id="popupDiv">
+    <div>
+        <button onclick="closePopup(event)" id="closeButton">Close</button>
+    </div>
+        <label for="name">Name</label>
+        <input type="text" placeholder="Name">
+        <br><br>
+        <button class="btn-form">Update</button>
+    </div>
+
+    <!-- appointments info -->
+    <section>
+        <h3>Appointments</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Patient Info</th>
+                    <th>Assigned Doctor</th>
+                    <th>Added By</th>
+                    <th>Notes</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>Dummy date</td>
+                    <td>PatientA (Male), 94</td>
+                    <td>Not Assigned</td>
+                    <td>User1</td>
+                    <td>Mild fever, bleeding, missing limbs</td>
+                    <td>
+                        <div>
+                            <button onclick="openPopup(event)" class="btn-form">Edit</button>
+                            <button onclick="openPopup(event)" class="btn-form">Update Patient</button>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Dummy date</td>
+                    <td>PatientA (Maybe Male), 105</td>
+                    <td>Not Assigned</td>
+                    <td>User1</td>
+                    <td>maybe dead</td>
+                    <td>
+                        <div>
+                            <button onclick="openPopup(event)" class="btn-form">Edit</button>
+                            <button onclick="openPopup(event)" class="btn-form">Update Patient</button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</body>
+<script src="./script.js"></script>
+</html>

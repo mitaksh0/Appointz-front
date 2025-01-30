@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="icon" type="image/x-icon" href="./favicon.png">
+</head>
+<body>
+    
+    <div class="box">
+        <h2>Enter Register Details</h2>
+        <hr>
+        
+        <div class="align">
+            <form class="register">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td><label for="full-name">Full Name: </label></td>
+                            <td><input type="text" name="full-name" placeholder="Full Name"></td>
+                        </tr>
+
+                        <tr>
+                            <td><label for="username">Username: </label></td>
+                            <td><input type="text" name="username" placeholder="Username"></td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label for="email">Email: </label>
+                            </td>
+                            <td>
+                                <input type="email" name="email" placeholder="Email">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label for="password">Password: </label>
+                            </td>
+                            <td>
+                                <input type="password" name="password" placeholder="Password">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label for="password">Re-Password: </label>
+                            </td>
+                            <td>
+                                <input type="password" name="password" placeholder="Re Password">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label for="role">Role: </label>
+                            </td>
+                            <td>
+                                <select name="role" id="">
+                                    <option selected disabled>Select</option>
+                                    <option value="receptionist">Receptionist</option>
+                                    <option value="doctor">Doctor</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- <br> -->
+                <div class="center">
+                    <button class="btn" type="submit">Register</button>
+                </div>
+            </form>
+        </div>
+
+        <hr>
+        <h3>Already registered ?</h3>
+        <a class="btn" href="./login.html">Log In</a>
+    </div>
+
+
+</body>
+
+<script src="./script.js"></script>
+</html>
