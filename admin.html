@@ -11,25 +11,219 @@
     <!-- user info and logout button -->
     <header> 
         <div>
-            <h4>Welcome, {username (role)}</h4>
-            <button class="logout btn">Logout</button>
+            <h4 id="admin-info">Welcome, {username (role)}</h4>
+            <button class="logout btn" id="logout">Logout</button>
         </div>
     </header>
 
     <!-- popup -->
-    <div id="popupDiv">
-    <div>
-        <button onclick="closePopup(event)" id="closeButton">Close</button>
+    <div class="popupDiv" id="popup-add-patient" style="display: none;">
+        <div>
+            <button onclick="closePopup(event)" id="closeButton">Close</button>
+        </div>
+        <form onsubmit="addPatientForm(event, 'POST', 0)">
+            <table>
+                <tr>
+                    <td><label for="fname">First Name:</label></td>
+                    <td><input type="text" placeholder="First Name"></td>
+                </tr>
+                <tr>
+                    <td><label for="lname">Last Name:</label></td>
+                    <td><input type="text" placeholder="Last Name"></td>
+                </tr>
+                <tr>
+                    <td><label for="gender">Gender:</label></td>
+                    <td><input type="text" placeholder="Gender"></td>
+                </tr>
+                <tr>
+                    <td><label for="contact">Contact:</label></td>
+                    <td><input type="text" placeholder="Contact"></td>
+                </tr>
+                <tr>
+                    <td><label for="address">Address:</label></td>
+                    <td><input type="textarea" placeholder="Address"></td>
+                </tr>
+                <tr>
+                    <td><label for="dob">Date Of Birth:</label></td>
+                    <td><input type="text" placeholder="Date Of Birth"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: center;">
+                        <button class="btn-form">Add</button>
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <br>
+        </form>
     </div>
-        <label for="name">Name</label>
-        <input type="text" placeholder="Name">
-        <br><br>
-        <button class="btn-form">Update</button>
+
+        <div class="popupDiv" id="popup-edit-patient" style="display: none;">
+            <div>
+                <button onclick="closePopup(event)" id="closeButton">Close</button>
+            </div>
+            
+            <table>
+                <tr>
+                    <td><label for="">Select Patient:</label></td>
+                    <td>
+                        <select id="edit-patient-select">
+                            <option value="" disabled selected>Select</option>
+                            <!-- to be filled from API data -->
+                        </select>
+                    </td>
+                </tr>
+            </table>
+
+            <form id="update-patient">
+                <table>
+                    <tr>
+                        <td><label for="fname">First Name:</label></td>
+                        <td><input type="text" name="fname" placeholder="First Name"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="lname">Last Name:</label></td>
+                        <td><input type="text" placeholder="Last Name"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="gender">Gender:</label></td>
+                        <td><input type="text" placeholder="Gender"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="contact">Contact:</label></td>
+                        <td><input type="text" placeholder="Contact"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="address">Address:</label></td>
+                        <td><input type="textarea" placeholder="Address"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="dob">Date Of Birth:</label></td>
+                        <td><input type="text" placeholder="Date Of Birth"></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">
+                            <button class="btn-form">Update</button>
+                        </td>
+                        <td style="text-align: center;">
+                            <button class="btn-form delete" type="reset">Delete</button>
+                        </td>
+                    </tr>
+                </table>
+                <br><br>
+            </form>
+        </div>
+
+    <div class="popupDiv" id="popup-add-appointment" style="display: none;">
+        <div>
+            <button onclick="closePopup(event)" id="closeButton">Close</button>
+        </div>
+        <form onsubmit="addAppointForm(event)">
+            <table>
+                <tr>
+                    <td><label for="">Select Patient:</label></td>
+                    <td>
+                        <select id="edit-appointment-patient-select">
+                            <option value="" disabled selected>Select</option>
+                            <!-- to be filled from API data -->
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="">Select Doctor:</label></td>
+                    <td>
+                        <select id="edit-doctor-select">
+                            <option value="" disabled selected>Select</option>
+                            <!-- to be filled from API data -->
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="appDate">Appointment Date:</label></td>
+                    <td><input type="date" placeholder="Appointment Date"></td>
+                </tr>
+                <tr>
+                    <td><label for="appTime">Appointment Time:</label></td>
+                    <td><input type="time" placeholder="Appointment Time"></td>
+                </tr>
+                <tr>
+                    <td><label for="notes">Notes:</label></td>
+                    <td><input type="text" placeholder="Notes"></td>
+                </tr>
+                <tr>
+                    <td><label for="addedBy">Added By:</label></td>
+                    <td><input type="textarea" disabled placeholder="Added By"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: center;">
+                        <button class="btn-form">Add</button>
+                    </td>
+                </tr>
+            </table>
+            <br><br>
+
+        </form>
+    </div>
+
+    <div class="popupDiv" id="popup-edit-appointment" style="display: none;">
+        <div>
+            <button onclick="closePopup(event)" id="closeButton">Close</button>
+        </div>
+        <form onsubmit="updateAppointForm(event)">
+            <table>
+                <tr>
+                    <td><label for="">Select Patient:</label></td>
+                    <td>
+                        <select id="edit-appointment-patient-select">
+                            <option value="" disabled selected>Select</option>
+                            <!-- to be filled from API data -->
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="">Select Doctor:</label></td>
+                    <td>
+                        <select id="edit-doctor-select">
+                            <option value="" disabled selected>Select</option>
+                            <!-- to be filled from API data -->
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="appDate">Appointment Date:</label></td>
+                    <td><input type="date" placeholder="Appointment Date"></td>
+                </tr>
+                <tr>
+                    <td><label for="appTime">Appointment Time:</label></td>
+                    <td><input type="time" placeholder="Appointment Time"></td>
+                </tr>
+                <tr>
+                    <td><label for="notes">Notes:</label></td>
+                    <td><input type="text" placeholder="Notes"></td>
+                </tr>
+                <tr>
+                    <td><label for="addedBy">Added By:</label></td>
+                    <td><input type="textarea" disabled placeholder="Added By"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: center;">
+                        <button class="btn-form">Update</button>
+                    </td>
+                </tr>
+            </table>
+            <br><br>
+
+        </form>
     </div>
 
     <!-- appointments info -->
     <section>
         <h3>Appointments</h3>
+        <div class="right">
+            <button class="btn admin-access" id="add-patient">Add Patient</button>
+            <button class="btn" id="edit-patient">Edit Patient</button>
+            <button class="btn admin-access" id="add-appointment">Add Appointment</button>
+        </div>
         <table>
             <thead>
                 <tr>
@@ -42,32 +236,9 @@
                 </tr>
             </thead>
 
-            <tbody>
+            <tbody id="appointments-body">
                 <tr>
-                    <td>Dummy date</td>
-                    <td>PatientA (Male), 94</td>
-                    <td>Not Assigned</td>
-                    <td>User1</td>
-                    <td>Mild fever, bleeding, missing limbs</td>
-                    <td>
-                        <div>
-                            <button onclick="openPopup(event)" class="btn-form">Edit</button>
-                            <button onclick="openPopup(event)" class="btn-form">Update Patient</button>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Dummy date</td>
-                    <td>PatientA (Maybe Male), 105</td>
-                    <td>Not Assigned</td>
-                    <td>User1</td>
-                    <td>maybe dead</td>
-                    <td>
-                        <div>
-                            <button onclick="openPopup(event)" class="btn-form">Edit</button>
-                            <button onclick="openPopup(event)" class="btn-form">Update Patient</button>
-                        </div>
-                    </td>
+                    <td colspan="6">No appointments.</td>
                 </tr>
             </tbody>
         </table>
